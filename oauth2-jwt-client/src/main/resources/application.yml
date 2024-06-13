@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: simple-spring-boot-oauth2-client
+  cloud:
+    openfeign:
+      oauth2:
+        enabled: true
+        clientRegistrationId: keycloak
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: my-app
+            client-secret: miLcxMzpcd3kKCvoqy5J1pMfp12EiFqY
+            authorization-grant-type: client_credentials
+            provider: keycloak
+        provider:
+          keycloak:
+            token-uri: http://localhost:18080/auth/realms/camunda-platform/protocol/openid-connect/token
+
+task:
+  url: http://localhost:9198
+  name: task
+
+server:
+  port: 9199
+
+logging:
+  level:
+    web: debug

@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: spring-resource-server
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: http://localhost:18080/auth/realms/camunda-platform
+server:
+  port: 9198
+
+logging:
+  level:
+    web: debug
